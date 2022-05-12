@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание аккаунта</title>
+</head>
+<body>
+    <form action="." method="post">
+        {% csrf_token %}
+        <p>
+            <label for="username" class="uname" data-icon="u" > Your username </label>
+            {{ user_form.username }}
+        </p>
+        <p>
+            <label for="password" class="youpasswd" data-icon="p"> Your phone </label>
+            {{ user_form.phone }}
+            </p>
+        <p>
+            <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+            {{ user_form.password }}
+        </p>
+        <p>
+            <label for="password" class="youpasswd" data-icon="p"> Your password2 </label>
+            {{ user_form.password2 }}
+        </p>
+        <br>
+        <input type="submit" value="Create account" name="submit"/>
+        </form>
+</body>
+</html>
