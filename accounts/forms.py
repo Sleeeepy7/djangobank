@@ -8,7 +8,7 @@ class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
-                                 message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+                                 message="Телефон должен быть в формате: '+999999999'. до 15 символов разрешено.")
     phone = forms.CharField(validators=[phone_regex], max_length=17)
 
     class Meta:
@@ -24,7 +24,7 @@ class UserRegistrationForm(forms.ModelForm):
 
 class TransactionForm(forms.ModelForm):
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9,15}$',
-                                 message="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed.")
+                                 message="Телефон должен быть в формате: '+999999999'. до 15 символов разрешено.")
     phone = forms.CharField(validators=[phone_regex], max_length=17)
 
     class Meta:
